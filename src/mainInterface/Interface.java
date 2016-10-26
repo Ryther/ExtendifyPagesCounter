@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pdfsambasicmerge;
+package mainInterface;
 
+import utilities.ExtenderThread;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -110,7 +111,7 @@ public class Interface extends javax.swing.JFrame {
     private void extendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extendButtonActionPerformed
         
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        Callable<String> callable = new PDFSamBasicMerge(this.minField.getText());
+        Callable<String> callable = new ExtenderThread(this.minField.getText());
         Future<String> extendify = executor.submit(callable);
         try {
             this.extendedTextArea.setText(extendify.get());

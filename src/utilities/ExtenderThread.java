@@ -1,17 +1,20 @@
-package pdfsambasicmerge;
+package utilities;
 
+
+
+import utilities.OddEvenPages;
 import java.util.concurrent.Callable;
 
 /**
  *
  * @author Edoardo Zanoni
  */
-public class PDFSamBasicMerge implements Callable {
+public class ExtenderThread implements Callable {
 
     private final String minifiedString;
     private String result;
     
-    public PDFSamBasicMerge (String data) {
+    public ExtenderThread (String data) {
         
         this.minifiedString = data;
     }
